@@ -24,7 +24,7 @@ export default function TabOneScreen() {
           </Text>
           <Image style={styles.image} source={require('../../assets/images/place_holder.png')} />
           <View style={styles.ridesFriends}>
-            <View style={styles.verticaleLine}></View>
+            <View style={styles.verticaleLine}/>
               <Text style={[styles.text, {marginTop: 20, marginLeft: 40}]}>
                 ICI{'\n'}RETROUVE{'\n'}TON PLAN{'\n'}VIRTUEL
                 {'\n'}
@@ -73,7 +73,7 @@ export default function TabOneScreen() {
           <View style={styles.container2}>
             <Text style={styles.title3}>Participe en votant tout au long de ta journee</Text>
             <Text style={[styles.text2, styles.sideText]}>
-              Choisi.e l'atelier pour laquelle tu as envie de vôté et lâche ta meilleure
+              Choisie l'atelier pour lequel tu as envie de voté et lâche ta meilleure analyse !
             </Text>
             <Image style={styles.image} source={require('../../assets/images/place_holder.png')} />
             <TouchableOpacity style={[styles.button, {marginTop: 45}]}>
@@ -82,6 +82,28 @@ export default function TabOneScreen() {
           </View>
           <View style={styles.reverseTriangle} />
           <Text style={[styles.title2, styles.sideText, {marginTop: 100}]}>+D'info?{'\n'}</Text>
+          <View>
+            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15, flex: 1}]}/>
+            <Text style={[styles.text, {position: 'absolute', marginLeft: 35, marginTop: 35}]}>
+              ICI RETROUVE{'\n'}TON PLAN{'\n'}VIRTUEL
+            </Text>
+            <Text style={[styles.text, {position: 'absolute', marginLeft: 95, marginTop: 180}]}>
+              REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE
+            </Text>
+            <Text style={[styles.text, {position: 'absolute', marginLeft: 150, marginTop: 375}]}>
+              REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE
+            </Text>
+          </View>
+          <Image source={require('../../assets/images/LOGO-38-HALF.png')}/>
+          <View>
+            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15, flex: 1}]}/>
+            <Text style={[styles.text, {position: 'absolute', marginLeft: 95, marginTop: 35}]}>
+              ICI RETROUVE{'\n'}TON PLAN{'\n'}VIRTUEL
+            </Text>
+            <Text style={[styles.text, {position: 'absolute', marginLeft: 35, marginTop: 180}]}>
+              REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE
+            </Text>
+          </View>
         </ScrollView>
     </View>
   );
@@ -151,14 +173,14 @@ const styles = StyleSheet.create({
   },
   ridesFriends: {
     paddingTop: 70,
-    alignItems: 'center',
+    alignItems: "flex-end",
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: '100%',
     marginBottom: 20,
   },
   verticaleLine: {
-    height: '100%',
+    height: 300,
     width: 1,
     backgroundColor: '#FEF9F5',
   },
