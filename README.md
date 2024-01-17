@@ -13,7 +13,7 @@ Installez la dernière version correspondant à votre système d'exploitation
  - Une fois cela fait décompresser le fichier ZIP et faite clique droit sur le dossier décompresser et appuyez sur "Ouvrir dans un terminal"
    
 ## Exécuter l'application
- - Vérifiez que dans le terminal vous êtes bien dans le dossier "iovi"  
+ - Vérifiez que dans le terminal vous êtes bien dans le dossier "iovi-main"  
 ![GitIovi](https://github.com/Zombizz97/iovi/assets/94461612/4eb8995d-b8cd-41f5-b85b-04b69fe28370)
  - Pour commencer éxécuter la commande `npm install`, afin d'installer tous les plugins nécessaire
  - Enfin pour lancer l'application, dans le terminal entrez la commande `npx expo start`
