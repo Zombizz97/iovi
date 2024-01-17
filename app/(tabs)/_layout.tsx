@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'center',
         height: 130,
-        backgroundColor: '#fff',
+        backgroundColor: '#FEF9F5',
         width: '100%'
     }
 });
