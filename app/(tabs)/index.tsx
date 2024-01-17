@@ -4,6 +4,7 @@ import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
 import React from "react";
 import { useFonts } from 'expo-font';
+import Footer from "../include/footer";
 
 export default function TabOneScreen() {
   const [fontsLoaded] = useFonts({
@@ -83,7 +84,7 @@ export default function TabOneScreen() {
           <View style={styles.reverseTriangle} />
           <Text style={[styles.title2, styles.sideText, {marginTop: 100}]}>+D'info?{'\n'}</Text>
           <View>
-            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15, flex: 1}]}/>
+            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15}]}/>
             <Text style={[styles.text, {position: 'absolute', marginLeft: 35, marginTop: 35}]}>
               ICI RETROUVE{'\n'}TON PLAN{'\n'}VIRTUEL
             </Text>
@@ -96,7 +97,7 @@ export default function TabOneScreen() {
           </View>
           <Image source={require('../../assets/images/LOGO-38-HALF.png')}/>
           <View>
-            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15, flex: 1}]}/>
+            <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 15, marginBottom: 100}]}/>
             <Text style={[styles.text, {position: 'absolute', marginLeft: 95, marginTop: 35}]}>
               ICI RETROUVE{'\n'}TON PLAN{'\n'}VIRTUEL
             </Text>
@@ -104,6 +105,7 @@ export default function TabOneScreen() {
               REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE
             </Text>
           </View>
+          <Footer/>
         </ScrollView>
     </View>
   );
