@@ -53,6 +53,7 @@ export default function TabOneScreen() {
               <Text style={styles.textButton}>Je m'inscris</Text>
             </TouchableOpacity>
             <Image style={styles.image2} source={require('../../assets/images/place_holder.png')} />
+            <Image style={styles.imageHachureCenter} source={require('../../assets/images/HACHURE.png')}/>
             <View style={styles.topHalf}>
               <Image style={styles.halfImage} source={require('../../assets/images/LOGO-31.png')} />
             </View>
@@ -246,12 +247,21 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     position: 'absolute',
     bottom: 60,
-    zIndex: -1
+    zIndex: -1,
+  },
+  imageHachureCenter: {
+    width: 250,
+    height: 150,
+    resizeMode: "cover",
+    position: 'absolute',
+    bottom: 150,
+    zIndex: -1,
+    alignSelf: 'center'
   },
   temp: {
     fontFamily: 'AcierBatTextSolid',
     color: 'red',
     fontSize: 50,
-    alignSelf: "center"
+    alignSelf: 'center'
   }
 });

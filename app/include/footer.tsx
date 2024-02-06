@@ -1,4 +1,4 @@
-import {StyleSheet, ScrollView, View, Image, Dimensions, TouchableOpacity} from 'react-native';
+import {StyleSheet, ScrollView, View, Image, Dimensions, TouchableOpacity, Linking } from 'react-native';
 
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
@@ -15,17 +15,22 @@ export default function Footer() {
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
+  const handlePressInstagram = () => {
+    // Action à effectuer lorsqu'on appuie sur l'image (par exemple, ouvrir un lien)
+    Linking.openURL('https://www.instagram.com/iovi_festival/');
+  };
 
   return (
     <View style={styles.container2}>
         <ScrollView>
           <Text style={[styles.title, {alignSelf: 'center'}]}>{'\n'}Nos reseaux{'\n'}</Text>
           <View>
-            <TouchableOpacity style={{alignSelf: 'flex-start', position: 'absolute', marginLeft: 100}}>
+            <TouchableOpacity style={{alignSelf: 'flex-start', position: 'absolute', marginLeft: 100}}
+                              onPress={handlePressInstagram}>
               <Image style={styles.image} source={require('../../assets/images/LOGO-INSTA.png')}/>
             </TouchableOpacity>
             <TouchableOpacity style={{alignSelf: 'flex-end', marginRight: 100, paddingTop: 1}}>
-              <Image style={styles.imageFacebook} source={require('../../assets/images/LOGO-FACEBOOK.png')}/>
+              <Image style={[styles.imageFacebook, {borderRadius: 13}]} source={require('../../assets/images/LOGO-FACEBOOK.png')}/>
             </TouchableOpacity>
             <Text>{'\n'}{'\n'}</Text>
           </View>
