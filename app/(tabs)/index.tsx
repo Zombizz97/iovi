@@ -5,6 +5,7 @@ import Colors from '../../constants/Colors';
 import React from "react";
 import { useFonts } from 'expo-font';
 import Footer from "../include/footer";
+import IndexCarousel from "../include/carousel";
 
 export default function TabOneScreen() {
   const [fontsLoaded] = useFonts({
@@ -61,7 +62,8 @@ export default function TabOneScreen() {
 
           <Text style={[styles.title2 , {marginTop: 75}]}>  Au Programme...   </Text>
           <Text style={[styles.text, styles.sideText, {textAlign: 'center'}]}>Découvre les différents ateliers, scènes et conférences de la journée basés autour de l'audiovisuel</Text>
-          <Text style={[styles.temp, {zIndex: 1}]}>FAIRE LE CARROUSEL T_T</Text>
+          <IndexCarousel/>
+          <View style={{paddingBottom: 100}}/>
           <View style={styles.triangle}/>
           <View style={[styles.container2,
             {
@@ -189,12 +191,7 @@ const styles = StyleSheet.create({
   },
   triangle: {
     position: 'relative',
-    right: 0,
-    bottom: 0,
-    width: 0,
-    height: 0,
     borderLeftWidth: Dimensions.get('window').width,
-    borderRightWidth: 0,
     borderBottomWidth: 60,
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
@@ -202,15 +199,8 @@ const styles = StyleSheet.create({
   },
   reverseTriangle: {
     position: 'relative',
-    right: 0,
-    bottom: 0,
-    width: 0,
-    height: 0,
-    borderLeftWidth: 0,
     borderRightWidth: Dimensions.get('window').width,
-    // borderBottomWidth: 60,
     borderTopWidth: 60,
-    borderLeftColor: '#FEF9F5',
     borderRightColor: 'transparent',
     borderTopColor: '#FEF9F5',
   },
