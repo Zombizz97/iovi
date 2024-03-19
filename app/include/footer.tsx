@@ -1,9 +1,9 @@
-import {StyleSheet, View, Image, Dimensions, TouchableOpacity, Linking } from 'react-native';
+import {View, Image, TouchableOpacity, Linking } from 'react-native';
 
 import { Text } from '../../components/Themed';
-import Colors from '../../constants/Colors';
 import React from "react";
 import { useFonts } from 'expo-font';
+import styles from "../../assets/style/styleSheet";
 
 export default function Footer() {
   const [fontsLoaded] = useFonts({
@@ -16,7 +16,6 @@ export default function Footer() {
     return <Text>Loading...</Text>;
   }
   const handlePressInstagram = () => {
-    // Action à effectuer lorsqu'on appuie sur l'image (par exemple, ouvrir un lien)
     Linking.openURL('https://www.instagram.com/iovi_festival/');
   };
 
@@ -26,63 +25,17 @@ export default function Footer() {
         <View>
           <TouchableOpacity style={{alignSelf: 'flex-start', position: 'absolute', marginLeft: 100}}
                             onPress={handlePressInstagram}>
-            <Image style={styles.image} source={require('../../assets/images/LOGO-INSTA.png')}/>
+            <Image style={styles.imageInsta} source={require('../../assets/images/LOGO-INSTA.png')}/>
           </TouchableOpacity>
           <TouchableOpacity style={{alignSelf: 'flex-end', marginRight: 100, paddingTop: 1}}>
             <Image style={[styles.imageFacebook, {borderRadius: 13}]} source={require('../../assets/images/LOGO-FACEBOOK.png')}/>
           </TouchableOpacity>
           <Text>{'\n'}{'\n'}</Text>
         </View>
-      <View style={styles.triangle}/>
+      <View style={styles.triangleWhite}/>
       <View style={styles.container}>
         <Image style={styles.logo} source={require('../../assets/images/LOGO-23.png')}/>
       </View>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: Colors.dark.background,
-    borderTopWidth: 1,
-    borderTopColor: Colors.dark.background,
-  },
-  container2: {
-    flex: 1,
-    backgroundColor: '#FEF9F5',
-  },
-  title: {
-    fontSize: 35,
-    color: '#0F016A',
-    fontFamily: 'AcierBatTextSolid'
-  },
-  image: {
-    width: 70,
-    height: 70,
-    alignSelf: 'center',
-    marginTop: 5
-  },
-  imageFacebook: {
-    width: 68,
-    height: 68,
-    alignSelf: 'center',
-    marginTop: 5
-  },
-  triangle: {
-    borderRightWidth: Dimensions.get('window').width,
-    borderBottomWidth: 60,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderBottomColor: Colors.dark.background,
-  },
-  button: {
-    width: 80,
-    height: 80
-  },
-  logo: {
-    resizeMode: 'center',
-    height: 100,
-    width: '100%'
-  },
-});

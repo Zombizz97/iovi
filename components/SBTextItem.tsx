@@ -12,7 +12,7 @@ export const SBTextItem: React.FC<Props> = ({ style, text , isAtelier}) => {
   return (
     <View style={[styles.container, style]}>
       {isAtelier ?
-          (<Text style={{ fontSize: 25, color: "#FEF9F5"}}>{text}</Text>) : (<Text style={{ fontSize: 30, color: "#FEF9F5"}}>{text}</Text>)
+          (<Text style={{ fontSize: 15, color: "#FEF9F5"}}>{text}</Text>) : (<Text style={{ fontSize: 25, color: "#FEF9F5"}}>{text}</Text>)
       }
     </View>
   );
