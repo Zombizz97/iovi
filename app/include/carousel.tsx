@@ -1,15 +1,10 @@
 import * as React from "react";
-import { View } from "react-native";
-import Animated, {
-    Extrapolate,
-    interpolate,
-    useAnimatedStyle,
-    useSharedValue,
-} from "react-native-reanimated";
+import {View} from "react-native";
+import Animated, {Extrapolate, interpolate, useAnimatedStyle, useSharedValue,} from "react-native-reanimated";
 import Carousel from "react-native-reanimated-carousel";
 
-import { SBItem } from "../../components/SBItem";
-import { window } from "../../constants";
+import {SBItem} from "../../components/SBItem";
+import {window} from "../../constants";
 
 const PAGE_WIDTH = window.width;
 const colors = [
@@ -28,27 +23,50 @@ const images = [
     require("../../assets/images/place_holder.png"),
 ];
 
-const texts = [
-    "Atelier 1",
-    "Atelier 2",
-    "Atelier 3",
-    "Atelier 4",
-    "Atelier 5"
-]
-
-function IndexCarousel() {
+function IndexCarousel(props: { isAtelier: boolean; }) {
+    const { isAtelier } = props;
+    const texts = isAtelier ? [
+        "Atelier Son",
+        "Atelier Photo",
+        "Atelier Vidéo",
+        "Atelier Post Production",
+        "Atelier Lumière",
+    ] : [
+        "Atelier 1",
+        "Atelier 2",
+        "Atelier 3",
+        "Atelier 4",
+        "Atelier 5"
+    ]
+    const subTexts = [
+        "Découvre les différents ateliers et conférence de la journée basés autour de l'audiovisuel",
+        "Découvre les différents ateliers et conférence de la journée basés autour de l'audiovisuel",
+        "Découvre les différents ateliers et conférence de la journée basés autour de l'audiovisuel",
+        "Découvre les différents ateliers et conférence de la journée basés autour de l'audiovisuel",
+        "Découvre les différents ateliers et conférence de la journée basés autour de l'audiovisuel",
+    ]
     const [snapEnabled] = React.useState<boolean>(true);
     const progressValue = useSharedValue<number>(0);
-    const baseOptions = {
+    let baseOptions;
+    if (isAtelier) {
+        baseOptions = {
+            vertical: false,
+            width: PAGE_WIDTH,
+            height: 550,
+        } as const;
+    } else {
+        baseOptions = {
             vertical: false,
             width: PAGE_WIDTH,
             height: PAGE_WIDTH,
         } as const;
+    }
 
     return (
         <View
             style={{
                 alignItems: "center",
+                marginTop: 10
             }}
         >
             <Carousel
@@ -67,7 +85,9 @@ function IndexCarousel() {
                     parallaxScrollingOffset: 50,
                 }}
                 data={colors}
-                renderItem={({ index }) => <SBItem index={index} img={images[index]} text={texts[index]} />}
+                renderItem={({ index }) =>
+                    <SBItem index={index} img={images[index]} text={texts[index]} subText={subTexts[index]} isAtelier={isAtelier} />
+                }
             />
             {!!progressValue && (
                 <View

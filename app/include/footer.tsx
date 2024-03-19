@@ -1,4 +1,4 @@
-import {StyleSheet, ScrollView, View, Image, Dimensions, TouchableOpacity, Linking } from 'react-native';
+import {StyleSheet, View, Image, Dimensions, TouchableOpacity, Linking } from 'react-native';
 
 import { Text } from '../../components/Themed';
 import Colors from '../../constants/Colors';
@@ -22,23 +22,21 @@ export default function Footer() {
 
   return (
     <View style={styles.container2}>
-        <ScrollView>
-          <Text style={[styles.title, {alignSelf: 'center'}]}>{'\n'}Nos reseaux{'\n'}</Text>
-          <View>
-            <TouchableOpacity style={{alignSelf: 'flex-start', position: 'absolute', marginLeft: 100}}
-                              onPress={handlePressInstagram}>
-              <Image style={styles.image} source={require('../../assets/images/LOGO-INSTA.png')}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={{alignSelf: 'flex-end', marginRight: 100, paddingTop: 1}}>
-              <Image style={[styles.imageFacebook, {borderRadius: 13}]} source={require('../../assets/images/LOGO-FACEBOOK.png')}/>
-            </TouchableOpacity>
-            <Text>{'\n'}{'\n'}</Text>
-          </View>
-          <View style={styles.triangle}/>
-          <View style={styles.container}>
-            <Image style={styles.logo} source={require('../../assets/images/LOGO-23.png')}/>
-          </View>
-        </ScrollView>
+      <Text style={[styles.title, {alignSelf: 'center'}]}>{'\n'}Nos reseaux{'\n'}</Text>
+        <View>
+          <TouchableOpacity style={{alignSelf: 'flex-start', position: 'absolute', marginLeft: 100}}
+                            onPress={handlePressInstagram}>
+            <Image style={styles.image} source={require('../../assets/images/LOGO-INSTA.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity style={{alignSelf: 'flex-end', marginRight: 100, paddingTop: 1}}>
+            <Image style={[styles.imageFacebook, {borderRadius: 13}]} source={require('../../assets/images/LOGO-FACEBOOK.png')}/>
+          </TouchableOpacity>
+          <Text>{'\n'}{'\n'}</Text>
+        </View>
+      <View style={styles.triangle}/>
+      <View style={styles.container}>
+        <Image style={styles.logo} source={require('../../assets/images/LOGO-23.png')}/>
+      </View>
     </View>
   );
 }
@@ -46,7 +44,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: Colors.dark.background
+    backgroundColor: Colors.dark.background,
+    borderTopWidth: 1,
+    borderTopColor: Colors.dark.background,
   },
   container2: {
     flex: 1,
@@ -70,20 +70,13 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   triangle: {
-    position: 'relative',
-    right: 0,
-    bottom: 0,
-    width: 0,
-    height: 0,
     borderRightWidth: Dimensions.get('window').width,
-    borderLeftWidth: 0,
     borderBottomWidth: 60,
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
-    borderBottomColor: '#0F016A',
+    borderBottomColor: Colors.dark.background,
   },
   button: {
-    backgroundColor: Colors.dark.background,
     width: 80,
     height: 80
   },

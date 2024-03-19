@@ -14,10 +14,12 @@ interface Props extends AnimateProps<ViewProps> {
   showIndex?: boolean
   img?: ImageSourcePropType
   text?: string
+  subText?: string
+  isAtelier?: boolean
 }
 
 export const SBItem: React.FC<Props> = (props) => {
-  const { style, showIndex = true, index, img, text, testID, ...animatedViewProps } = props;
+  const { style, showIndex = true, index, img, text, subText, isAtelier, testID, ...animatedViewProps } = props;
   return (
     <LongPressGestureHandler>
       <Animated.View testID={testID} style={{ flex: 1 }} {...animatedViewProps}>
@@ -26,6 +28,9 @@ export const SBItem: React.FC<Props> = (props) => {
               <SBImageItem style={style} index={index} showIndex={typeof index === 'number' && showIndex}
                            img={img}/>
               <SBTextItem text={text}/>
+              {isAtelier ? <SBTextItem text={subText} isAtelier={isAtelier} /> : '' }
+
+
             </>
         )}
       </Animated.View>

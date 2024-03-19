@@ -62,8 +62,9 @@ export default function TabOneScreen() {
 
           <Text style={[styles.title2 , {marginTop: 75}]}>  Au Programme...   </Text>
           <Text style={[styles.text, styles.sideText, {textAlign: 'center'}]}>Découvre les différents ateliers, scènes et conférences de la journée basés autour de l'audiovisuel</Text>
-          <IndexCarousel/>
+          <IndexCarousel isAtelier={false}/>
           <View style={{paddingBottom: 100}}/>
+          <View style={{height: 1, backgroundColor: '#0F016A'}} />
           <View style={styles.triangle}/>
           <View style={[styles.container2,
             {
