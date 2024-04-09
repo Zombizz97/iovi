@@ -1,4 +1,4 @@
-import { ScrollView, View, Image, TouchableOpacity} from 'react-native';
+import {ScrollView, View, Image, TouchableOpacity} from 'react-native';
 
 import { Text } from '../../components/Themed';
 import React from "react";
@@ -13,6 +13,7 @@ export default function TabOneScreen() {
     "AcierBatTextSolid": require("../../assets/fonts/AcierBatText-Solid.otf"),
     "Inter": require("../../assets/fonts/Inter.otf"),
   });
+
 
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
@@ -36,6 +37,10 @@ export default function TabOneScreen() {
                 REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE{'\n'}DE 9H00 A 20H30
               </Text>
           </View>
+
+          {/*<TouchableOpacity onPress={() => navigate('Modal')}>*/}
+          {/*  <Text>Go to Modal</Text>*/}
+          {/*</TouchableOpacity>*/}
 
           <View style={styles.triangle}/>
           <View style={styles.container2}>
@@ -72,7 +77,7 @@ export default function TabOneScreen() {
               alignItems: 'center',
               justifyContent: 'space-between'
             }]}>
-            <Image style={styles.imageLeft} source={require('../../assets/images/LOGO-31-250.png')} />
+            <Image style={styles.imageRight} source={require('../../assets/images/LOGO-31-250.png')} />
             <Image style={styles.imageHachure} source={require('../../assets/images/HACHURE.png')}/>
           </View>
           <View style={styles.container2}>
@@ -86,7 +91,7 @@ export default function TabOneScreen() {
             </TouchableOpacity>
           </View>
           <View style={styles.reverseTriangle} />
-          <Text style={[styles.title2, styles.sideText, {marginTop: 100}]}>+D'info?{'\n'}</Text>
+          <Text style={[styles.title2, styles.sideText, {marginTop: 100}]}>+D'info?</Text>
           <View>
             <View style={[styles.verticaleLine, {position: 'relative', marginLeft: 35}]}/>
             <Text style={[styles.text, {position: 'absolute', marginLeft: 55, marginTop: 35}]}>

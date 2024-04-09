@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 35,
         color: '#0F016A',
-        fontFamily: 'AcierBatTextSolid'
+        fontFamily: 'AcierBatTextSolid',
+        lineHeight: 45
     },
     titleOutline: {
         fontSize: 35,
@@ -60,7 +61,9 @@ const styles = StyleSheet.create({
         fontSize: 40,
         alignSelf: 'center',
         color: '#FEF9F5',
-        fontFamily: 'AcierBatTextSolid'
+        fontFamily: 'AcierBatTextSolid',
+        marginBottom: 20,
+        lineHeight: 45
     },
     title3: {
         fontSize: 40,
@@ -90,11 +93,16 @@ const styles = StyleSheet.create({
         width: width,
         height: height / 2,
     },
-    imageLeft: {
+    imageRight: {
         width: 125,
         height: 125,
         marginLeft: "auto",
         marginRight: 20
+    },
+    imageLeft: {
+        width: 100,
+        height: 75,
+        marginRight: "auto"
     },
     imageHachure: {
         width: 150,
@@ -125,6 +133,19 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 5
     },
+    imageHachureRoundRight: {
+        width: 350,
+        height: 130,
+        borderBottomLeftRadius: 100,
+        borderTopLeftRadius: 100,
+        alignSelf: 'flex-end',
+    },
+    imageHachureRoundLeft: {
+        width: 350,
+        height: 130,
+        borderBottomRightRadius: 100,
+        borderTopRightRadius: 100
+    },
     logo: {
         resizeMode: 'center',
         height: 100,
@@ -146,6 +167,14 @@ const styles = StyleSheet.create({
     triangle: {
         position: 'relative',
         borderLeftWidth: Dimensions.get('window').width,
+        borderBottomWidth: 60,
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderBottomColor: '#FEF9F5',
+    },
+    mirrorTriangle: {
+        position: 'relative',
+        borderRightWidth: Dimensions.get('window').width,
         borderBottomWidth: 60,
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
@@ -192,6 +221,20 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 125
     },
+    dotForRight: {
+        width:120,
+        height:120,
+        position:'absolute',
+        top: 5,
+        left: 70
+    },
+    dotForLeft: {
+        width:120,
+        height:120,
+        position:'absolute',
+        top: 5,
+        right: 70
+    }
 });
 
 export default styles;

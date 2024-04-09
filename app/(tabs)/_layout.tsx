@@ -32,21 +32,6 @@ export default function TabLayout() {
                   <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
               </View>
           )
-          // Header for a modal button
-          // headerRight: () => (
-          //   <Link href="/modal" asChild>
-          //     <Pressable>
-          //       {({ pressed }) => (
-          //         <FontAwesome
-          //           name="info-circle"
-          //           size={25}
-          //           color={Colors[colorScheme ?? 'light'].text}
-          //           style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-          //         />
-          //       )}
-          //     </Pressable>
-          //   </Link>
-          // ),
         }}
       />
       <Tabs.Screen
@@ -61,6 +46,30 @@ export default function TabLayout() {
           )
         }}
       />
+      <Tabs.Screen
+          name="three"
+          options={{
+              title: 'Trois',
+              tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+              header: () => (
+                  <View style={styles.headerBar}>
+                      <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                  </View>
+              )
+          }}
+      />
+      <Tabs.Screen
+          name="four"
+          options={{
+              title: 'Quatre',
+              tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+              header: () => (
+                  <View style={styles.headerBar}>
+                      <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                  </View>
+              )
+          }}
+      />
     </Tabs>
   );
 }
@@ -68,14 +77,15 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
     logo: {
         resizeMode: 'contain',
-        height: '80%',
-        width: '80%'
+        height: '70%',
+        width: '70%',
+        marginTop: 20
     },
     headerBar: {
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'center',
-        height: 130,
+        height: 150,
         backgroundColor: '#FEF9F5',
         width: '100%'
     }

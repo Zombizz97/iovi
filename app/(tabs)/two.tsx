@@ -36,7 +36,7 @@ export default function TabTwoScreen() {
             <Image style={styles.halfImage} source={require('../../assets/images/LOGO-31.png')} />
           </View>
           <View style={styles.container}>
-            <Text style={[styles.title2, {paddingTop: 80}]}>Les ateliers{'\n'}</Text>
+            <Text style={[styles.title2, {paddingTop: 80}]}>Les ateliers</Text>
             <Text style={styles.textCenter}>Découvre ici, les différents ateliers de la journée</Text>
             <IndexCarousel isAtelier={true} />
             <View style={{paddingTop: 100}}/>
@@ -49,7 +49,7 @@ export default function TabTwoScreen() {
               </View>
             </View>
             <Image style={styles.image3} source={require('../../assets/images/LOGO-38.png')} />
-            <Text style={styles.title2}>Les conferences{'\n'}</Text>
+            <Text style={styles.title2}>Les conferences</Text>
             <Text style={[styles.textCenter, {fontWeight: 'bold'}]}>Decouvre ici, les différentes conférences de la journée</Text>
             <IndexCarousel isAtelier={true} />
             <View style={{paddingBottom: 100}}/>
