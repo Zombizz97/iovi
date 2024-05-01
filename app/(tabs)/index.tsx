@@ -14,7 +14,6 @@ export default function TabOneScreen() {
     "Inter": require("../../assets/fonts/Inter.otf"),
   });
 
-
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
@@ -37,10 +36,6 @@ export default function TabOneScreen() {
                 REJOINS LES MEILLEURS{'\n'}ATELIERS ET CONFERENCES{'\n'}DE LA JOURNÉE{'\n'}DE 9H00 A 20H30
               </Text>
           </View>
-
-          {/*<TouchableOpacity onPress={() => navigate('Modal')}>*/}
-          {/*  <Text>Go to Modal</Text>*/}
-          {/*</TouchableOpacity>*/}
 
           <View style={styles.triangle}/>
           <View style={styles.container2}>

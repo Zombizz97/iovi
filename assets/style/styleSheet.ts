@@ -93,6 +93,12 @@ const styles = StyleSheet.create({
         width: width,
         height: height / 2,
     },
+    halfImageForStripes: {
+        width: width,
+        height: height / 2,
+        overflow: 'hidden',
+        position: 'absolute',
+    },
     imageRight: {
         width: 125,
         height: 125,
@@ -219,7 +225,7 @@ const styles = StyleSheet.create({
         height: height / 4,
         overflow: 'hidden',
         position: 'absolute',
-        top: 125
+        top: 135
     },
     dotForRight: {
         width:120,

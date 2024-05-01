@@ -31,9 +31,7 @@ export default function TabTwoScreen() {
             <View style={[styles.rectangularView, { backgroundColor: '#AEA2FC' }]}></View>
             <View style={[styles.rectangularView, { backgroundColor: '#55DCFF' }]}></View>
             <View style={[styles.rectangularView, { backgroundColor: '#F8CDB4' }]}></View>
-          </View>
-          <View style={styles.topHalfTwo}>
-            <Image style={styles.halfImage} source={require('../../assets/images/LOGO-31.png')} />
+            <Image style={styles.halfImageForStripes} source={require('../../assets/images/LOGO-31.png')} />
           </View>
           <View style={styles.container}>
             <Text style={[styles.title2, {paddingTop: 80}]}>Les ateliers</Text>
