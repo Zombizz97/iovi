@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+import type {Theme} from '@react-navigation/native/src/types'
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -44,12 +45,22 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const color: Theme = {
+    dark: true,
+    colors: {
+      primary: 'rgb(10, 132, 255)',
+      background: 'rgb(1, 1, 1)',
+      card: '#0F016A',
+      text: 'rgb(229, 229, 231)',
+      border: 'rgb(39, 39, 41)',
+      notification: 'rgb(255, 69, 58)',
+    },
+  };
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={color}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
     </ThemeProvider>
   );

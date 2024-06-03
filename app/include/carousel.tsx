@@ -2,7 +2,7 @@ import * as React from "react";
 import {View} from "react-native";
 import Animated, {Extrapolate, interpolate, useAnimatedStyle, useSharedValue,} from "react-native-reanimated";
 import Carousel from "react-native-reanimated-carousel";
-
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import {SBItem} from "../../components/SBItem";
 import {window} from "../../constants";
 
@@ -52,7 +52,7 @@ function IndexCarousel(props: { isAtelier: boolean; }) {
         baseOptions = {
             vertical: false,
             width: PAGE_WIDTH,
-            height: 550,
+            height: hp('65%'),
         } as const;
     } else {
         baseOptions = {
@@ -66,7 +66,7 @@ function IndexCarousel(props: { isAtelier: boolean; }) {
         <View
             style={{
                 alignItems: "center",
-                marginTop: 10
+                marginTop: hp('1%')
             }}
         >
             <Carousel
@@ -75,7 +75,6 @@ function IndexCarousel(props: { isAtelier: boolean; }) {
                     width: PAGE_WIDTH,
                 }}
                 loop
-                snapEnabled={snapEnabled}
                 onProgressChange={(_, absoluteProgress) =>
                     (progressValue.value = absoluteProgress)
                 }
@@ -83,6 +82,10 @@ function IndexCarousel(props: { isAtelier: boolean; }) {
                 modeConfig={{
                     parallaxScrollingScale: 0.9,
                     parallaxScrollingOffset: 50,
+                }}
+                panGestureHandlerProps={{
+                    activeOffsetX: [-100, 100],
+                    activeOffsetY: [-200, 200],
                 }}
                 data={colors}
                 renderItem={({ index }) =>
@@ -94,7 +97,7 @@ function IndexCarousel(props: { isAtelier: boolean; }) {
                     style={{
                                 flexDirection: "row",
                                 justifyContent: "space-between",
-                                width: 100,
+                                width: wp('25%'),
                                 alignSelf: "center",
                             }
                     }

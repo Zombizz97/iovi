@@ -1,77 +1,69 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { useColorScheme, View, Image, StyleSheet} from 'react-native';
-
-import Colors from '../../constants/Colors';
+import { View, Image, StyleSheet} from 'react-native';
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Accueil',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          header: () => (
-              <View style={styles.headerBar}>
-                  <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
-              </View>
-          )
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Détails',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          header: () => (
-              <View style={styles.headerBar}>
-                  <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
-              </View>
-          )
-        }}
-      />
-      <Tabs.Screen
-          name="three"
-          options={{
-              title: 'Trois',
-              tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-              header: () => (
-                  <View style={styles.headerBar}>
-                      <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
-                  </View>
-              )
-          }}
-      />
-      <Tabs.Screen
-          name="four"
-          options={{
-              title: 'Quatre',
-              tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-              header: () => (
-                  <View style={styles.headerBar}>
-                      <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
-                  </View>
-              )
-          }}
-      />
-    </Tabs>
-  );
+      <Tabs>
+          <Tabs.Screen
+              name="index"
+              options={{
+                  title: 'Accueil',
+                  tabBarIcon: ({ color }) => <FontAwesome name="info" size={28} color={color} />,
+                  header: () => (
+                      <View style={styles.headerBar}>
+                          <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                      </View>
+                  ),
+                  tabBarActiveTintColor: '#FFD49B',
+              }}
+          />
+          <Tabs.Screen
+              name="two"
+              options={{
+                  title: 'Ateliers',
+                  tabBarIcon: ({ color }) => <FontAwesome name="calendar" size={28} color={color} />,
+                  header: () => (
+                      <View style={styles.headerBar}>
+                          <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                      </View>
+                  ),
+                  tabBarActiveTintColor: '#F8CDB4',
+              }}
+          />
+          <Tabs.Screen
+              name="three"
+              options={{
+                  title: 'Vote',
+                  tabBarIcon: ({ color }) => <Ionicons name="checkmark-circle" size={28} color={color} />,
+                  header: () => (
+                      <View style={styles.headerBar}>
+                          <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                      </View>
+                  ),
+                  tabBarActiveTintColor: '#DEA5FF',
+              }}
+          />
+          <Tabs.Screen
+              name="four"
+              options={{
+                  title: 'Résumé',
+                  tabBarIcon: ({ color }) => <Ionicons name="document-text" size={28} color={color} />,
+                  header: () => (
+                      <View style={styles.headerBar}>
+                          <Image source={require('../../assets/images/LOGO-01.png')} style={styles.logo} />
+                      </View>
+                  ),
+                  tabBarActiveTintColor: '#AEA2FC',
+              }}
+          />
+        </Tabs>
+      );
 }
 
 const styles = StyleSheet.create({

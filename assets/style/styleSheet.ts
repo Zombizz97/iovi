@@ -1,7 +1,9 @@
 import {Dimensions, StyleSheet} from "react-native";
 import Colors from "../../constants/Colors";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const {width, height} = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -17,76 +19,76 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     text: {
-        fontSize: 15,
-        marginBottom: 55,
+        fontSize: wp('4%'),
+        marginBottom: hp('6%'),
         color: '#FEF9F5',
         fontFamily: 'Inter'
     },
     text2: {
-        fontSize: 15,
-        marginBottom: 55,
+        fontSize: wp('4%'),
+        marginBottom: hp('6%'),
         color: '#0F016A',
         fontFamily: 'Inter'
     },
     sideText: {
         alignSelf: 'flex-start',
         position: 'relative',
-        top: 10,
-        padding: 20,
+        top: hp('1%'),
+        padding: wp('5%'),
     },
     textButton: {
-        fontSize: 20,
-        paddingTop: 8,
+        fontSize: wp('5%'),
+        paddingTop: hp('1%'),
         fontFamily: 'Inter'
     },
     textCenter: {
-        fontSize: 15,
-        marginBottom: 55,
+        fontSize: wp('4%'),
+        marginBottom: hp('6%'),
         color: '#FEF9F5',
         fontFamily: 'Inter',
         alignSelf: 'center'
     },
     title: {
-        fontSize: 35,
+        fontSize: wp('9%'),
         color: '#0F016A',
         fontFamily: 'AcierBatTextSolid',
-        lineHeight: 45
+        lineHeight: hp('5.5%')
     },
     titleOutline: {
-        fontSize: 35,
+        fontSize: wp('9%'),
         color: '#0F016A',
         fontFamily: 'AcierBatTextOutline'
     },
     title2: {
-        fontSize: 40,
+        fontSize: wp('10%'),
         alignSelf: 'center',
         color: '#FEF9F5',
         fontFamily: 'AcierBatTextSolid',
-        marginBottom: 20,
-        lineHeight: 45
+        marginBottom: hp('3%'),
+        lineHeight: hp('5.5%')
     },
     title3: {
-        fontSize: 40,
+        fontSize: wp('10%'),
         fontFamily: 'AcierBatTextOutline',
         color: '#0F016A',
-        paddingLeft: 25,
-        paddingTop: 20
+        paddingLeft: wp('6%'),
+        paddingTop: hp('3%')
     },
     image: {
-        width: 400,
-        height: 400,
+        width: wp('95%'),
+        height: wp('95%'),
         alignSelf: 'center'
     },
     image2: {
-        width: 386,
-        height: 386,
-        marginLeft: 25,
-        marginTop: 25
+        width: wp('95%'),
+        height: wp('50%'),
+        marginLeft: wp('6%'),
+        marginTop: hp('3%')
     },
     image3: {
-        width: 150,
-        height: 150,
-        marginTop: 150,
+        width: wp('40%'),
+        height: wp('40%'),
+        marginTop: hp('20%'),
         alignSelf: 'center'
     },
     halfImage: {
@@ -100,30 +102,30 @@ const styles = StyleSheet.create({
         position: 'absolute',
     },
     imageRight: {
-        width: 125,
-        height: 125,
+        width: wp('30%'),
+        height: wp('30%'),
         marginLeft: "auto",
-        marginRight: 20
+        marginRight: wp('5%')
     },
     imageLeft: {
-        width: 100,
-        height: 75,
+        width: wp('24%'),
+        height: wp('20%'),
         marginRight: "auto"
     },
     imageHachure: {
-        width: 150,
-        height: 250,
+        width: wp('40%'),
+        height: hp('35%'),
         resizeMode: "cover",
         position: 'absolute',
-        bottom: 60,
+        bottom: hp('2%'),
         zIndex: -1,
     },
     imageHachureCenter: {
-        width: 250,
-        height: 150,
+        width: wp('60%'),
+        height: hp('20%'),
         resizeMode: "cover",
         position: 'absolute',
-        bottom: 150,
+        bottom: hp('17%'),
         zIndex: -1,
         alignSelf: 'center'
     },
@@ -131,49 +133,49 @@ const styles = StyleSheet.create({
         width: 68,
         height: 68,
         alignSelf: 'center',
-        marginTop: 5
+        marginTop: hp('0.5%')
     },
     imageInsta: {
-        width: 70,
-        height: 70,
+        width: wp('17%'),
+        height: wp('17%'),
         alignSelf: 'center',
-        marginTop: 5
+        marginTop: hp('0.5%')
     },
     imageHachureRoundRight: {
-        width: 350,
-        height: 130,
-        borderBottomLeftRadius: 100,
-        borderTopLeftRadius: 100,
+        width: wp('85%'),
+        height: hp('15%'),
+        borderBottomLeftRadius: wp('25%'),
+        borderTopLeftRadius: wp('25%'),
         alignSelf: 'flex-end',
     },
     imageHachureRoundLeft: {
-        width: 350,
-        height: 130,
-        borderBottomRightRadius: 100,
-        borderTopRightRadius: 100
+        width: wp('85%'),
+        height: hp('15%'),
+        borderBottomRightRadius: wp('25%'),
+        borderTopRightRadius: wp('25%')
     },
     logo: {
         resizeMode: 'center',
-        height: 100,
+        height: hp('15%'),
         width: '100%'
     },
     ridesFriends: {
-        paddingTop: 70,
+        paddingTop: hp('10%'),
         alignItems: "flex-end",
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         width: '100%',
-        marginBottom: 20,
+        marginBottom: hp('3%'),
     },
     verticaleLine: {
-        height: 250,
+        height: hp('37%'),
         width: 1,
         backgroundColor: '#FEF9F5',
     },
     triangle: {
         position: 'relative',
         borderLeftWidth: Dimensions.get('window').width,
-        borderBottomWidth: 60,
+        borderBottomWidth: hp('8%'),
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
         borderBottomColor: '#FEF9F5',
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
     mirrorTriangle: {
         position: 'relative',
         borderRightWidth: Dimensions.get('window').width,
-        borderBottomWidth: 60,
+        borderBottomWidth: hp('8%'),
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
         borderBottomColor: '#FEF9F5',
@@ -189,16 +191,16 @@ const styles = StyleSheet.create({
     reverseTriangle: {
         position: 'relative',
         borderRightWidth: Dimensions.get('window').width,
-        borderTopWidth: 60,
+        borderTopWidth: hp('8%'),
         borderRightColor: 'transparent',
         borderTopColor: '#FEF9F5',
     },
     button: {
-        marginLeft: 25,
+        marginLeft: wp('6%'),
         backgroundColor: Colors.dark.background,
         alignItems: 'center',
-        width: 175,
-        height: 50
+        width: wp('45%'),
+        height: hp('6%')
     },
     topHalf: {
         width: width,
@@ -207,39 +209,40 @@ const styles = StyleSheet.create({
     },
     triangleWhite: {
         borderRightWidth: Dimensions.get('window').width,
-        borderBottomWidth: 60,
+        borderBottomWidth: hp('8%'),
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
         borderBottomColor: Colors.dark.background,
     },
     rectangularView: {
-        height: 200,
+        height: hp('24%'),
         width: width / 5,
     },
     banner: {
-        paddingHorizontal: 20,
-        paddingVertical: 5,
+        paddingHorizontal: wp('5%'),
+        paddingVertical: hp('0.5%'),
+        alignItems: 'center',
     },
     topHalfTwo: {
         width: width,
         height: height / 4,
         overflow: 'hidden',
         position: 'absolute',
-        top: 135
+        top: hp('18%')
     },
     dotForRight: {
-        width:120,
-        height:120,
+        width:hp('14%'),
+        height: hp('14%'),
         position:'absolute',
-        top: 5,
-        left: 70
+        top: hp('0.5%'),
+        left: wp('16.5%')
     },
     dotForLeft: {
-        width:120,
-        height:120,
+        width:hp('14%'),
+        height: hp('14%'),
         position:'absolute',
-        top: 5,
-        right: 70
+        top: hp('0.5%'),
+        right: wp('16.5%')
     }
 });
 
